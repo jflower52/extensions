@@ -8,27 +8,27 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <!-- 환영 메시지 -->
-    <div id="welcomeMessage"></div>
+    <div id="container">
+      <div class="box-1"></div>
+      <div class="box-2"></div>
+      <div class="box-3"></div>
+    </div>
+
+    <!-- 온도 표시 -->
+    <div class="weather-box">
+      <p id="weather"></p>
+    </div>
 
     <!-- 날짜 및 시간 표시 -->
     <div class="clock-box">
       <div id="clock"></div>
     </div>
 
-    <!-- 날씨 데이터 -->
-    <div class="weather-box">
-      <p id="weather"></p>
-    </div>
+    <!-- 환영 메시지 -->
+    <div id="welcomeMessage"></div>
 
     <!-- 이름 초기화 버튼 -->
     <button id="resetNameButton">이름 초기화</button>
-
-    <!-- 잔디 출석 그리드 (우측 하단에 위치) -->
-    <div id="grassContainer">
-      <button id="toggleGrassButton">잔디 출석</button>
-      <div id="grassGrid"></div>
-    </div>
 
     <script src="js/index.js"></script>
   </body>

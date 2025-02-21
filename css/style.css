@@ -19,20 +19,20 @@ body {
   transition: background 1s ease;
 }
 
+/* 날짜 및 시간 */
+#clock {
+  font-size: 4rem; /* 더 크게 설정 */
+  margin-top: 20px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
 /* 환영 메시지 */
 #welcomeMessage {
   font-size: 2rem;
   margin: 20px 0;
   font-weight: bold;
-}
-
-/* 날짜 및 시간 */
-#clock {
-  font-size: 2.5rem;
-  margin-top: 20px;
-  font-weight: bold;
-  color: white;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
 /* 날씨 */
@@ -41,6 +41,9 @@ body {
   color: white;
   margin-top: 10px;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
 
 /* 초기화 버튼 */
@@ -103,48 +106,4 @@ body {
   #resetNameButton {
     padding: 8px 20px;
   }
-}
-
-/* 잔디 출석 그리드 */
-#grassContainer {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 1000;
-}
-
-#toggleGrassButton {
-  padding: 10px;
-  background-color: #3498db;
-  color: white;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-#toggleGrassButton:hover {
-  background-color: #2980b9;
-}
-
-#grassGrid {
-  display: none; /* 기본적으로 숨김 */
-  margin-top: 10px;
-  display: grid;
-  grid-template-columns: repeat(7, 30px);
-  gap: 5px;
-}
-
-.grass-cell {
-  width: 30px;
-  height: 30px;
-  background-color: #bdc3c7;
-  border-radius: 5px;
-}
-
-.grass-cell.active {
-  background-color: #2ecc71; /* 초록색 */
-}
-
-.grass-cell.inactive {
-  background-color: #95a5a6; /* 회색 */
 }
