@@ -8,15 +8,26 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <!-- 배경 비디오 -->
-    <video autoplay loop muted playsinline id="bgVideo">
-      <source src="./video/v01.mp4" type="video/mp4" />
-      브라우저가 동영상을 지원하지 않습니다.
-    </video>
+    <!-- 환영 메시지 -->
+    <div id="welcomeMessage"></div>
 
     <!-- 날짜 및 시간 표시 -->
     <div class="clock-box">
       <div id="clock"></div>
+    </div>
+
+    <!-- 날씨 데이터 -->
+    <div class="weather-box">
+      <p id="weather"></p>
+    </div>
+
+    <!-- 이름 초기화 버튼 -->
+    <button id="resetNameButton">이름 초기화</button>
+
+    <!-- 잔디 출석 그리드 (우측 하단에 위치) -->
+    <div id="grassContainer">
+      <button id="toggleGrassButton">잔디 출석</button>
+      <div id="grassGrid"></div>
     </div>
 
     <script src="js/index.js"></script>
