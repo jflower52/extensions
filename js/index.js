@@ -80,7 +80,7 @@ $(document).ready(function () {
     currentTime();
   }, 1000);
 
-  // 현재 온도
+  // 현재 온도 및 날씨 가져오기
   (function getLocation() {
     navigator.geolocation.getCurrentPosition(async (position) => {
       let latitude = position.coords.latitude;
@@ -89,8 +89,44 @@ $(document).ready(function () {
       const data = await response.json();
       const {
         main: { temp },
+        weather,
       } = data;
-      document.getElementById("weather").innerText = `현재 온도: ${temp}`;
+
+      // 날씨 상태 가져오기
+      const weatherCondition = weather[0].main;
+
+      // 날씨 아이콘 매칭
+      let weatherIcon = "";
+      switch (weatherCondition) {
+        case "Clear":
+          weatherIcon = "☀️"; // 맑음
+          break;
+        case "Clouds":
+          weatherIcon = "☁️"; // 흐림
+          break;
+        case "Rain":
+          weatherIcon = "🌧️"; // 비
+          break;
+        case "Snow":
+          weatherIcon = "❄️"; // 눈
+          break;
+        case "Thunderstorm":
+          weatherIcon = "⛈️"; // 천둥번개
+          break;
+        case "Drizzle":
+          weatherIcon = "🌦️"; // 이슬비
+          break;
+        case "Mist":
+        case "Fog":
+        case "Haze":
+          weatherIcon = "🌫️"; // 안개
+          break;
+        default:
+          weatherIcon = "🌍"; // 기본 아이콘
+      }
+
+      // 화면에 출력
+      document.getElementById("weather").innerText = `날씨: ${weatherIcon}\n현재 온도: ${temp}°C`;
     });
   })();
 
